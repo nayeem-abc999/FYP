@@ -25,10 +25,10 @@ def calculate_metrics(y_true, y_pred):
     y_pred = y_pred.astype(np.uint8)
     y_pred = y_pred.reshape(-1)
 
-    score_jaccard = jaccard_score(y_true, y_pred)
-    score_f1 = f1_score(y_true, y_pred)
-    score_recall = recall_score(y_true, y_pred)
-    score_precision = precision_score(y_true, y_pred)
+    score_jaccard = jaccard_score(y_true, y_pred, zero_division=0) 
+    score_f1 = f1_score(y_true, y_pred, zero_division=0)
+    score_recall = recall_score(y_true, y_pred, zero_division=0)
+    score_precision = precision_score(y_true, y_pred, zero_division=0)
     score_acc = accuracy_score(y_true, y_pred)
 
     return [score_jaccard, score_f1, score_recall, score_precision, score_acc]
