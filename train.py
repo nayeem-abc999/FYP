@@ -65,7 +65,7 @@ if __name__ == "__main__":
     seeding(42)
 
     # Directories
-    create_directory("files")
+    create_directory("saved_models")
 
     # Load dataset
     train_x = sorted(glob("./final_dataset/train/images/*"))
@@ -82,9 +82,9 @@ if __name__ == "__main__":
     W = 512
     size = (H, W)
     batch_size = 2
-    num_epochs = 2
+    num_epochs = 25
     lr = 0.0001
-    checkpoint_path = "files/checkpoint.pth"
+    checkpoint_path = "saved_models/checkpoint.pth"
 
     # Dataset and loader
     train_dataset = RetinalDataset(train_x, train_y)
